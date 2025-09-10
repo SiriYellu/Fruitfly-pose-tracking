@@ -1,10 +1,9 @@
 # YOLO11 Training Plan - Advanced Variants
 
-## 🎯 **Training Strategy: YOLO11s-pose & YOLO11m-pose**
+##  **Training Strategy: YOLO11s-pose & YOLO11m-pose**
 
-You're absolutely right! The YOLO11n-pose (nano) version was too small for complex pose estimation. We're now training the larger, more capable variants:
 
-### 📊 **Model Comparison:**
+###  **Model Comparison:**
 
 | Model | Parameters | Size | Speed | Accuracy | Best For |
 |-------|------------|------|-------|----------|----------|
@@ -13,17 +12,17 @@ You're absolutely right! The YOLO11n-pose (nano) version was too small for compl
 | **YOLO11m-pose** | ~20M | ~40MB | Medium | Best | High Accuracy |
 | **YOLOv8s-pose** | 11.4M | 23.1MB | Medium | Good | Baseline |
 
-### 🚀 **Current Training Status:**
+###  **Current Training Status:**
 
-#### **✅ Completed:**
+#### ** Completed:**
 - **YOLO11n-pose**: Trained (84.9% mAP50) - Too small
 - **YOLOv8s-pose**: Trained (96.7% mAP50) - Good baseline
 
-#### **🔄 Currently Training:**
+#### ** Currently Training:**
 - **YOLO11s-pose**: Training in progress
 - **YOLO11m-pose**: Training in progress
 
-### 🎯 **Expected Results:**
+###  **Expected Results:**
 
 #### **YOLO11s-pose (Small):**
 - **Expected mAP50**: 92-95%
@@ -39,7 +38,7 @@ You're absolutely right! The YOLO11n-pose (nano) version was too small for compl
 - **Speed**: Medium inference
 - **Best For**: Highest accuracy
 
-### 🔧 **Training Configuration:**
+###  **Training Configuration:**
 
 ```yaml
 # YOLO11 Optimized Settings
@@ -67,7 +66,7 @@ fliplr: 0.5
 mosaic: 1.0
 ```
 
-### 📈 **Why YOLO11s/m Will Perform Better:**
+###  **Why YOLO11s/m Will Perform Better:**
 
 #### **1. More Parameters:**
 - **YOLO11s**: 3.5x more parameters than nano
@@ -84,7 +83,7 @@ mosaic: 1.0
 - **Cosine learning rate** for stability
 - **Advanced augmentation** for generalization
 
-### 🎨 **Auto-labeling Priority:**
+###  **Auto-labeling Priority:**
 
 The autolabeling script will automatically select the best available model:
 
@@ -93,7 +92,7 @@ The autolabeling script will automatically select the best available model:
 3. **YOLOv8s-pose** (baseline) - Proven performance
 4. **YOLO11n-pose** (fallback) - Basic performance
 
-### 📊 **Expected Performance Comparison:**
+###  **Expected Performance Comparison:**
 
 | Model | Pose mAP50 | Pose mAP50-95 | Speed | Size |
 |-------|------------|---------------|-------|------|
@@ -101,22 +100,4 @@ The autolabeling script will automatically select the best available model:
 | YOLO11s-pose | **96-97%** | **75-80%** | Fast | ~18MB |
 | YOLO11m-pose | **97-98%** | **80-85%** | Medium | ~40MB |
 | YOLOv8s-pose | 96.7% | 78.6% | Medium | 23.1MB |
-
-### 🎯 **Next Steps:**
-
-1. **Monitor Training**: Check progress of YOLO11s/m training
-2. **Compare Results**: Evaluate all trained models
-3. **Select Best Model**: Choose highest performing model
-4. **Auto-label 240 Images**: Process Extracted_Frames_task
-5. **Validate Quality**: Ensure 3 keypoints are clearly visible
-
-### 💡 **Key Insights:**
-
-- **YOLO11n was too small** for complex pose estimation
-- **YOLO11s/m variants** have much better capacity
-- **More parameters** = better accuracy for pose tasks
-- **YOLO11 architecture** is more advanced than YOLOv8
-- **Expected improvement** of 2-3% mAP50 over nano version
-
-**Training is in progress! We'll have much better results with the larger YOLO11 variants.** 🚀
 
