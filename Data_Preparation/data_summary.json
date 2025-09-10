@@ -1,0 +1,16 @@
+{
+  "total_videos": 147,
+  "valid_videos": 144,
+  "total_duration_minutes": 4320.720120020003,
+  "total_frames": 7776000,
+  "resolution_distribution": {
+    "2448x2048": 144
+  },
+  "fps_distribution": {
+    "30": 144
+  },
+  "duration_distribution": {
+    "30min": 144
+  },
+  "file_size_distribution": {}
+}
