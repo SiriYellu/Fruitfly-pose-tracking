@@ -1,0 +1,16 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+kpt_shape: [3, 3]
+flip_idx: [0, 1, 2]
+
+nc: 1
+names: ['Fruitfly']
+
+roboflow:
+  workspace: 2023-flyviallmagedata
+  project: fruit-fly-pose-tracking-rrhal
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/2023-flyviallmagedata/fruit-fly-pose-tracking-rrhal/dataset/3

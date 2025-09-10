@@ -1,0 +1,40 @@
+# Task 2: Auto-labeling Configuration
+
+# Model settings
+model_path: "Task2_ModelTraining/results/yolo11_training/weights/best.pt"
+fallback_model: "yolo11n-pose.pt"
+
+# Detection parameters
+confidence_threshold: 0.25      # Minimum confidence for detection
+iou_threshold: 0.6              # IoU threshold for NMS
+max_detections: 100             # Maximum detections per image
+
+# Keypoint settings
+num_keypoints: 3                # Number of keypoints per fly
+keypoint_names: ["head", "thorax", "abdomen"]
+visibility_threshold: 0.5       # Minimum visibility for keypoint
+keypoint_colors:                # Colors for each keypoint
+  - [0, 255, 0]                 # Green for head
+  - [255, 0, 0]                 # Blue for thorax  
+  - [0, 0, 255]                 # Red for abdomen
+
+# Input/Output settings
+input_directory: "/mnt/storage5/Fruitfly/Extracted_Frames_task"
+output_directory: "Task2_ModelTraining/results/autolabeled_frames"
+max_images: 240                 # Maximum images to process
+image_extensions: [".jpg", ".jpeg", ".png", ".bmp"]
+
+# Visualization settings
+save_visualizations: true       # Save images with keypoints
+visualization_directory: "visualizations"
+show_confidence: true           # Show detection confidence
+show_keypoints: true            # Show keypoint numbers
+show_boxes: true                # Show bounding boxes
+line_thickness: 2               # Line thickness for drawings
+font_scale: 0.5                 # Font scale for text
+
+# Processing settings
+batch_size: 1                   # Process images one at a time
+device: "auto"                  # Device (auto, cpu, 0, 1, etc.)
+half_precision: false           # Use half precision (FP16)
+verbose: true                   # Verbose output
