@@ -16,10 +16,10 @@ Train state-of-the-art YOLO pose estimation models on Roboflow fruit fly dataset
 ###  **Model Performance Comparison**
 | Model | Pose mAP50 | Pose mAP50-95 | Box mAP50 | Model Size | Parameters | Status |
 |-------|------------|---------------|-----------|------------|------------|--------|
-| **YOLO11m-pose** | **97.0%** | **89.8%** | **95.3%** | 42.2MB | 20.9M | ✅ **BEST** |
-| YOLO11s-pose | 96.9% | 89.7% | 95.2% | 18.9MB | ~9M | ✅ Good |
-| YOLOv8s-pose | 96.7% | 78.6% | 91.6% | 23.1MB | 11.4M | ✅ Baseline |
-| YOLO11n-pose | 95.1% | 64.0% | 84.9% | 5.6MB | 2.7M | ✅ Fast |
+| **YOLO11m-pose** | **97.0%** | **89.8%** | **95.3%** | 42.2MB | 20.9M |  **BEST** |
+| YOLO11s-pose | 96.9% | 89.7% | 95.2% | 18.9MB | ~9M |  Good |
+| YOLOv8s-pose | 96.7% | 78.6% | 91.6% | 23.1MB | 11.4M |  Baseline |
+| YOLO11n-pose | 95.1% | 64.0% | 84.9% | 5.6MB | 2.7M |  Fast |
 
 ###  **Auto-labeling Results**
 - ** Images Processed**: 240/240 (100% success rate)
