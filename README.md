@@ -1,13 +1,45 @@
-# Task 1: Pose Estimation Model Development
+# Fruit Fly Pose Tracking Project
 
 ## Overview
-This task focuses on developing and training pose estimation models for fruit fly tracking using YOLO-based architectures. The project includes data preparation, frame extraction, and pose estimation pipeline for detecting and localizing key anatomical points (head, thorax, abdomen) on individual flies in video frames.
+This repository contains a comprehensive fruit fly pose tracking system with multiple tasks focusing on data preparation, model training, and behavioral analysis. The project uses YOLO-based architectures for detecting and localizing key anatomical points (head, thorax, abdomen) on individual flies in video frames.
+
+## Project Structure
+
+```
+Fruitfly-pose-tracking/
+├── README.md                                    # This file
+├── Task1_PoseEstimation/                        # Task 1: Data preparation and frame extraction
+│   ├── README.md
+│   ├── extract_5_per_recording.py
+│   ├── Data_Preparation/
+│   ├── Extracted_Frames_task/
+│   ├── samples/
+│   └── Fruit Fly Pose Tracking.v3i.yolov8 (2).zip
+└── Task2_ModelTraining/                         # Task 2: YOLO model training and pose estimation
+    ├── README.md
+    ├── TASK2_SUMMARY.md
+    ├── YOLO11_TRAINING_PLAN.md
+    ├── configs/
+    ├── scripts/
+    ├── train/
+    ├── valid/
+    ├── test/
+    └── models/
+```
 
 ## Current Project Status
+
+### Task 1: Pose Estimation Model Development
 - **Data Preparation**: ✅ Complete
 - **Frame Extraction**: ✅ Complete (240 frames extracted)
 - **Model Training**: ⏳ Pending
 - **Pose Estimation**: ⏳ Pending
+
+### Task 2: Model Training
+- **Dataset Preparation**: ✅ Complete (annotated dataset with train/valid/test splits)
+- **Model Files**: ✅ Complete (YOLO11 and YOLOv8 models)
+- **Training Scripts**: ✅ Complete
+- **Configuration**: ✅ Complete
 
 ## Project Structure
 
@@ -39,7 +71,30 @@ Task1_PoseEstimation/
 └── Fruit Fly Pose Tracking.v3i.yolov8 (2).zip # Roboflow dataset (compressed)
 ```
 
-## Data Overview
+## Task 2: Model Training Overview
+
+### Dataset Information
+- **Annotated Dataset**: Complete YOLO format dataset with pose annotations
+- **Train/Valid/Test Split**: Properly divided dataset for model training
+- **Keypoints**: 3 anatomical points per fly (head, thorax, abdomen)
+- **Model Files**: Pre-trained YOLO models included
+  - `yolo11n-pose.pt` (6.3 MB)
+  - `yolo11m-pose.pt` (42.5 MB) 
+  - `yolo11s-pose.pt` (20.4 MB)
+  - `yolov8s-pose.pt` (23.5 MB)
+
+### Training Scripts
+- **train_yolo.py**: YOLO model training script
+- **train_yolo11_models.py**: YOLO11 specific training
+- **autolabel_frames.py**: Automatic frame labeling
+- **run_task2_pipeline.py**: Complete training pipeline
+
+### Configuration Files
+- **training_config.yaml**: Training parameters and hyperparameters
+- **autolabel_config.yaml**: Auto-labeling configuration
+- **data.yaml**: Dataset configuration
+
+## Task 1: Data Overview
 
 ### Video Data Statistics
 - **Total Video Files**: 147 videos (144 valid, 3 corrupted)
