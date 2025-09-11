@@ -1,11 +1,11 @@
 # Task 2: Model Training - Fruit Fly Pose Estimation
 
-## 🎯 **Objective**
+##  **Objective**
 Train state-of-the-art YOLO pose estimation models on Roboflow fruit fly dataset and auto-label 240 images with 3 keypoints (head, thorax, abdomen) clearly visible.
 
-## 📊 **Key Findings & Results**
+##  **Key Findings & Results**
 
-### 🏆 **Best Performing Model: YOLO11m-pose**
+###  **Best Performing Model: YOLO11m-pose**
 - **Pose mAP50**: 97.0% (highest accuracy)
 - **Pose mAP50-95**: 89.8% (excellent precision)
 - **Box mAP50**: 95.3% (superior detection)
@@ -13,22 +13,22 @@ Train state-of-the-art YOLO pose estimation models on Roboflow fruit fly dataset
 - **Parameters**: 20.9M
 - **Training Time**: 0.031 hours (100 epochs)
 
-### 📈 **Model Performance Comparison**
+###  **Model Performance Comparison**
 | Model | Pose mAP50 | Pose mAP50-95 | Box mAP50 | Model Size | Parameters | Status |
 |-------|------------|---------------|-----------|------------|------------|--------|
-| **YOLO11m-pose** | **97.0%** | **89.8%** | **95.3%** | 42.2MB | 20.9M | ✅ **BEST** |
-| YOLO11s-pose | 96.9% | 89.7% | 95.2% | 18.9MB | ~9M | ✅ Good |
-| YOLOv8s-pose | 96.7% | 78.6% | 91.6% | 23.1MB | 11.4M | ✅ Baseline |
-| YOLO11n-pose | 95.1% | 64.0% | 84.9% | 5.6MB | 2.7M | ✅ Fast |
+| **YOLO11m-pose** | **97.0%** | **89.8%** | **95.3%** | 42.2MB | 20.9M |  **BEST** |
+| YOLO11s-pose | 96.9% | 89.7% | 95.2% | 18.9MB | ~9M |  Good |
+| YOLOv8s-pose | 96.7% | 78.6% | 91.6% | 23.1MB | 11.4M |  Baseline |
+| YOLO11n-pose | 95.1% | 64.0% | 84.9% | 5.6MB | 2.7M |  Fast |
 
-### 🎨 **Auto-labeling Results**
-- **✅ Images Processed**: 240/240 (100% success rate)
-- **✅ Total Flies Detected**: 15,701 flies
-- **✅ Average per Image**: 65.42 flies per image
-- **✅ Processing Speed**: ~6.5ms per image
-- **✅ Keypoints**: 3 per fly (Head 🟢, Thorax 🔵, Abdomen 🔴)
+###  **Auto-labeling Results**
+- ** Images Processed**: 240/240 (100% success rate)
+- ** Total Flies Detected**: 15,701 flies
+- ** Average per Image**: 65.42 flies per image
+- ** Processing Speed**: ~6.5ms per image
+- ** Keypoints**: 3 per fly (Head 🟢, Thorax 🔵, Abdomen 🔴)
 
-## 📁 **Directory Structure**
+##  **Directory Structure**
 
 ```
 Task2_ModelTraining/
@@ -75,7 +75,7 @@ Task2_ModelTraining/
 └── 📄 *.pt                               # Model weight files
 ```
 
-## 🚀 **Quick Start**
+##  **Quick Start**
 
 ### 1. **Download Dataset**
 ```bash
@@ -102,7 +102,7 @@ python scripts/autolabel_frames.py
 python scripts/create_clean_visualizations.py
 ```
 
-## 📋 **Input Data**
+##  **Input Data**
 
 ### **Roboflow Dataset**
 - **Source**: [Fruit Fly Pose Tracking Dataset](https://universe.roboflow.com/2023-flyviallmagedata/fruit-fly-pose-tracking-rrhal/dataset/3)
@@ -118,7 +118,7 @@ python scripts/create_clean_visualizations.py
 - **Format**: JPG
 - **Resolution**: Various (resized to 640x640 for processing)
 
-## 🔧 **Technical Details**
+##  **Technical Details**
 
 ### **Training Configuration**
 ```yaml
@@ -162,7 +162,7 @@ names: ['Fruitfly']  # Class name
 - **Index 1**: Thorax (🔵 Blue)
 - **Index 2**: Abdomen (🔴 Red)
 
-## 📊 **Output Files**
+##  **Output Files**
 
 ### **1. Trained Models**
 - `yolo11m_training/weights/best.pt` - Best performing model
@@ -180,7 +180,7 @@ names: ['Fruitfly']  # Class name
 - `results/*/confusion_matrix.png` - Confusion matrices
 - `results/*/val_batch*.jpg` - Validation samples
 
-## 🎨 **Visualization Types**
+##  **Visualization Types**
 
 ### **1. Standard Visualizations** (`visualizations/`)
 - Original images with bounding boxes
@@ -207,7 +207,7 @@ names: ['Fruitfly']  # Class name
 - **mAP50**: 97.0%
 - **mAP50-95**: 89.8%
 
-## 🔍 **Key Insights**
+##  **Key Insights**
 
 ### **1. Model Architecture Impact**
 - **YOLO11m-pose** achieved the best balance of accuracy and performance
@@ -224,7 +224,7 @@ names: ['Fruitfly']  # Class name
 - **89.8% mAP50-95** shows high precision across IoU thresholds
 - **Consistent performance** across different fly densities
 
-## 🛠️ **Dependencies**
+##  **Dependencies**
 
 ```bash
 # Core dependencies
@@ -240,7 +240,7 @@ pillow>=9.5.0
 pyyaml>=6.0
 ```
 
-## 📝 **Usage Examples**
+##  **Usage Examples**
 
 ### **Load Best Model**
 ```python
@@ -271,17 +271,17 @@ for i, result in enumerate(results):
     result.save(f'output_{i}.jpg')
 ```
 
-## 🎯 **Success Criteria Met**
+##  **Success Criteria Met**
 
-- ✅ **Dataset downloaded** from Roboflow (30 images, 5,592 annotations)
-- ✅ **Multiple models trained** (YOLO11n, YOLO11s, YOLO11m, YOLOv8s)
-- ✅ **Best model selected** (YOLO11m-pose with 97% mAP50)
-- ✅ **240 images auto-labeled** with 3 keypoints visible
-- ✅ **Clean visualizations created** with skeletons only
-- ✅ **High-quality annotations** (15,701 flies detected)
-- ✅ **Comprehensive documentation** and organized structure
+-  **Dataset downloaded** from Roboflow (30 images, 5,592 annotations)
+-  **Multiple models trained** (YOLO11n, YOLO11s, YOLO11m, YOLOv8s)
+-  **Best model selected** (YOLO11m-pose with 97% mAP50)
+-  **240 images auto-labeled** with 3 keypoints visible
+-  **Clean visualizations created** with skeletons only
+-  **High-quality annotations** (15,701 flies detected)
+-  **Comprehensive documentation** and organized structure
 
-## 📞 **Support**
+##  **Support**
 
 For questions or issues:
 1. Check the `TASK2_SUMMARY.md` for quick overview
@@ -290,8 +290,6 @@ For questions or issues:
 4. Refer to the Ultralytics documentation for YOLO usage
 
 ---
-
-**Task 2 Status: ✅ COMPLETED SUCCESSFULLY**
 
 *Generated on: $(date)*
 *Total Processing Time: ~2 hours*

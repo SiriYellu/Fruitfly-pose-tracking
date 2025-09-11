@@ -1,12 +1,11 @@
 # Task 2: Model Training - Summary Report
 
-## 🎯 **Mission Accomplished**
 
 **Objective**: Train state-of-the-art YOLO pose estimation models and auto-label 240 images with 3 keypoints (head, thorax, abdomen) clearly visible.
 
-**Status**: ✅ **COMPLETED SUCCESSFULLY**
 
-## 🏆 **Final Results**
+
+##  **Final Results**
 
 ### **Best Model: YOLO11m-pose**
 - **Pose mAP50**: 97.0% (Outstanding!)
@@ -16,21 +15,21 @@
 - **Training Time**: 0.031 hours (100 epochs)
 
 ### **Auto-labeling Success**
-- **✅ 240/240 images processed** (100% success rate)
-- **✅ 15,701 flies detected** and annotated
-- **✅ 65.42 average flies per image**
-- **✅ 3 keypoints per fly** (Head 🟢, Thorax 🔵, Abdomen 🔴)
+- ** 240/240 images processed** (100% success rate)
+- ** 15,701 flies detected** and annotated
+- ** 65.42 average flies per image**
+- ** 3 keypoints per fly** (Head 🟢, Thorax 🔵, Abdomen 🔴)
 
-## 📊 **Model Performance Comparison**
+##  **Model Performance Comparison**
 
 | Rank | Model | Pose mAP50 | Pose mAP50-95 | Box mAP50 | Size | Parameters |
 |------|-------|------------|---------------|-----------|------|------------|
-| 🥇 | **YOLO11m-pose** | **97.0%** | **89.8%** | **95.3%** | 42.2MB | 20.9M |
-| 🥈 | YOLO11s-pose | 96.9% | 89.7% | 95.2% | 18.9MB | ~9M |
-| 🥉 | YOLOv8s-pose | 96.7% | 78.6% | 91.6% | 23.1MB | 11.4M |
-| 4th | YOLO11n-pose | 95.1% | 64.0% | 84.9% | 5.6MB | 2.7M |
+| 1 | **YOLO11m-pose** | **97.0%** | **89.8%** | **95.3%** | 42.2MB | 20.9M |
+| 2 | YOLO11s-pose | 96.9% | 89.7% | 95.2% | 18.9MB | ~9M |
+| 3 | YOLOv8s-pose | 96.7% | 78.6% | 91.6% | 23.1MB | 11.4M |
+| 4 | YOLO11n-pose | 95.1% | 64.0% | 84.9% | 5.6MB | 2.7M |
 
-## 📁 **Deliverables**
+##  **Deliverables**
 
 ### **1. Trained Models**
 - `results/yolo11m_training/weights/best.pt` - **Best performer**
@@ -70,7 +69,7 @@
 - **Output**: YOLO format labels + visualizations
 - **Processing Speed**: ~6.5ms per image
 
-## 🎨 **Visualization Features**
+##  **Visualization Features**
 
 ### **Standard Visualizations**
 - Original images with bounding boxes
@@ -87,7 +86,7 @@
   - 🔴 **Abdomen** (Red)
 - White skeleton lines connecting keypoints
 
-## 📈 **Key Performance Metrics**
+##  **Key Performance Metrics**
 
 ### **Training Metrics (Final Epoch)**
 - **Box Loss**: 1.685
@@ -107,7 +106,7 @@
 - **Total Flies Detected**: 15,701
 - **Average Detection Time**: 6.5ms per image
 
-## 🔍 **Key Insights & Discoveries**
+##  **Key Insights & Discoveries**
 
 ### **1. Model Architecture Impact**
 - **YOLO11m-pose** provided the best balance of accuracy and performance
@@ -127,7 +126,7 @@
 - **Consistent performance** across varying fly densities (9-146 flies per image)
 - **Robust detection** even in challenging lighting and occlusion conditions
 
-## 🛠️ **Technical Implementation**
+## 🛠 **Technical Implementation**
 
 ### **Training Configuration**
 ```yaml
@@ -166,7 +165,7 @@ nc: 1  # Number of classes
 names: ['Fruitfly']  # Class name
 ```
 
-## 📋 **File Structure Summary**
+##  **File Structure Summary**
 
 ```
 Task2_ModelTraining/
@@ -185,25 +184,25 @@ Task2_ModelTraining/
 └── 📄 README.md                        # Comprehensive documentation
 ```
 
-## 🎯 **Success Criteria Met**
+##  **Success Criteria Met**
 
-- ✅ **Dataset downloaded** from Roboflow (30 images, 5,592 annotations)
-- ✅ **Multiple YOLO models trained** (4 variants tested)
-- ✅ **Best model identified** (YOLO11m-pose with 97% mAP50)
-- ✅ **240 images auto-labeled** with 3 keypoints visible
-- ✅ **Clean visualizations created** with skeletons only
-- ✅ **High-quality annotations** (15,701 flies detected)
-- ✅ **Comprehensive documentation** and organized structure
-- ✅ **Performance comparison** across all model variants
+-  **Dataset downloaded** from Roboflow (30 images, 5,592 annotations)
+-  **Multiple YOLO models trained** (4 variants tested)
+-  **Best model identified** (YOLO11m-pose with 97% mAP50)
+-  **240 images auto-labeled** with 3 keypoints visible
+-  **Clean visualizations created** with skeletons only
+-  **High-quality annotations** (15,701 flies detected)
+-  **Comprehensive documentation** and organized structure
+-  **Performance comparison** across all model variants
 
-## 🚀 **Next Steps**
+##  **Next Steps**
 
 1. **Use the best model** (`yolo11m_training/weights/best.pt`) for future pose estimation
 2. **Leverage the 240 annotated images** for further analysis or training
 3. **Apply the clean visualizations** for publication or presentation
 4. **Extend the pipeline** to other datasets or species
 
-## 📊 **Final Statistics**
+##  **Final Statistics**
 
 - **Total Processing Time**: ~2 hours
 - **Models Trained**: 4
@@ -215,6 +214,5 @@ Task2_ModelTraining/
 
 ---
 
-**Task 2 Status: ✅ COMPLETED SUCCESSFULLY**
 
 *This summary represents the complete achievement of all Task 2 objectives with outstanding results.*
