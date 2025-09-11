@@ -15,10 +15,10 @@
 - **Training Time**: 0.031 hours (100 epochs)
 
 ### **Auto-labeling Success**
-- ** 240/240 images processed** (100% success rate)
-- ** 15,701 flies detected** and annotated
-- ** 65.42 average flies per image**
-- ** 3 keypoints per fly** (Head 🟢, Thorax 🔵, Abdomen 🔴)
+- *240/240 images processed* (100% success rate)
+- * 15,701 flies detected* and annotated
+- * 65.42 average flies per image*
+- * 3 keypoints per fly* (Head 🟢, Thorax 🔵, Abdomen 🔴)
 
 ##  **Model Performance Comparison**
 
@@ -48,7 +48,7 @@
 - Validation samples
 - Model comparison charts
 
-## 🔧 **Technical Achievements**
+##  **Technical Achievements**
 
 ### **Dataset Processing**
 - **Source**: Roboflow Fruit Fly Pose Tracking Dataset
@@ -204,15 +204,11 @@ Task2_ModelTraining/
 
 ##  **Final Statistics**
 
-- **Total Processing Time**: ~2 hours
 - **Models Trained**: 4
 - **Images Processed**: 240
 - **Flies Detected**: 15,701
-- **Success Rate**: 100%
 - **Best Accuracy**: 97.0% mAP50
-- **Files Generated**: 500+ (models, labels, visualizations)
+
 
 ---
 
-
-*This summary represents the complete achievement of all Task 2 objectives with outstanding results.*

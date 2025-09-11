@@ -46,28 +46,27 @@ Fruitfly-pose-tracking/
 ## Current Project Status
 
 ### Task 1: Pose Estimation Model Development
-- **Data Preparation**: ✅ Complete
-- **Frame Extraction**: ✅ Complete (240 frames extracted)
-- **Model Training**: ⏳ Pending
-- **Pose Estimation**: ⏳ Pending
+- **Data Preparation**
+- **Frame Extraction**
+- **Model Training**
+- **Pose Estimation**
 
 ### Task 2: Model Training
-- **Dataset Preparation**: ✅ Complete (annotated dataset with train/valid/test splits)
-- **Model Files**: ✅ Complete (YOLO11 and YOLOv8 models)
-- **Training Scripts**: ✅ Complete
-- **Configuration**: ✅ Complete
+- **Dataset Preparation**:  (annotated dataset with train/valid/test splits)
+- **Model Files**: Complete (YOLO11 and YOLOv8 models)
+- **Training Scripts**
+
 
 ### Task 3: Fly Tracking
-- **Tracking Pipeline**: ✅ Complete (pose-based tracking system)
-- **Behavioral Analysis**: ✅ Complete (movement and behavior analysis)
-- **Integration Scripts**: ✅ Complete
-- **Results Processing**: ✅ Complete
+- **Tracking Pipeline**: (pose-based tracking system)
+- **Behavioral Analysis**:  (movement and behavior analysis)
+- **Integration Scripts**
+
 
 ### Task 4: Behavioral Analysis
-- **Advanced Analytics**: ✅ Complete (comprehensive behavioral analysis)
-- **Visualization Tools**: ✅ Complete (research dashboards and charts)
-- **Statistical Analysis**: ✅ Complete (clustering and correlation analysis)
-- **Research Outputs**: ✅ Complete (publication-ready visualizations)
+- **Advanced Analytics**: (comprehensive behavioral analysis)
+- **Visualization Tools**: (research dashboards and charts)
+- **Statistical Analysis**:  (clustering and correlation analysis)
 
 ## Project Structure
 
@@ -311,7 +310,7 @@ yolo pose val \
 - **Pose Estimation**: 1-2 hours (240 frames)
 - **Tracking**: 30 minutes (240 frames)
 - **Behavioral Analysis**: 15 minutes
-- **Total Remaining**: 2-3 hours
+
 
 ## Research Applications
 
@@ -360,6 +359,3 @@ yolo pose val \
 
 ---
 
-**Last Updated**: January 2025
-**Data Source**: 2023 FlyVialImage_Data
-**Status**: Data preparation complete, ready for pose estimation model development
