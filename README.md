@@ -15,16 +15,32 @@ Fruitfly-pose-tracking/
 │   ├── Extracted_Frames_task/
 │   ├── samples/
 │   └── Fruit Fly Pose Tracking.v3i.yolov8 (2).zip
-└── Task2_ModelTraining/                         # Task 2: YOLO model training and pose estimation
+├── Task2_ModelTraining/                         # Task 2: YOLO model training and pose estimation
+│   ├── README.md
+│   ├── TASK2_SUMMARY.md
+│   ├── YOLO11_TRAINING_PLAN.md
+│   ├── configs/
+│   ├── scripts/
+│   ├── train/
+│   ├── valid/
+│   ├── test/
+│   └── models/
+├── Task3_FlyTracking/                           # Task 3: Fly tracking and behavioral analysis
+│   ├── README.md
+│   ├── TASK3_SUMMARY.md
+│   ├── fly_tracker.py
+│   ├── behavioral_analyzer.py
+│   ├── run_tracking_pipeline.py
+│   ├── configs/
+│   ├── scripts/
+│   └── results/
+└── Task4_BehavioralAnalysis/                    # Task 4: Comprehensive behavioral analysis
     ├── README.md
-    ├── TASK2_SUMMARY.md
-    ├── YOLO11_TRAINING_PLAN.md
-    ├── configs/
+    ├── behavioral_analyzer.py
+    ├── run_behavioral_analysis.py
     ├── scripts/
-    ├── train/
-    ├── valid/
-    ├── test/
-    └── models/
+    ├── visualizations/
+    └── results/
 ```
 
 ## Current Project Status
@@ -40,6 +56,18 @@ Fruitfly-pose-tracking/
 - **Model Files**: ✅ Complete (YOLO11 and YOLOv8 models)
 - **Training Scripts**: ✅ Complete
 - **Configuration**: ✅ Complete
+
+### Task 3: Fly Tracking
+- **Tracking Pipeline**: ✅ Complete (pose-based tracking system)
+- **Behavioral Analysis**: ✅ Complete (movement and behavior analysis)
+- **Integration Scripts**: ✅ Complete
+- **Results Processing**: ✅ Complete
+
+### Task 4: Behavioral Analysis
+- **Advanced Analytics**: ✅ Complete (comprehensive behavioral analysis)
+- **Visualization Tools**: ✅ Complete (research dashboards and charts)
+- **Statistical Analysis**: ✅ Complete (clustering and correlation analysis)
+- **Research Outputs**: ✅ Complete (publication-ready visualizations)
 
 ## Project Structure
 
@@ -93,6 +121,34 @@ Task1_PoseEstimation/
 - **training_config.yaml**: Training parameters and hyperparameters
 - **autolabel_config.yaml**: Auto-labeling configuration
 - **data.yaml**: Dataset configuration
+
+## Task 3: Fly Tracking Overview
+
+### Tracking System
+- **Pose-Based Tracking**: Advanced tracking using pose estimation results
+- **Multi-Object Tracking**: Handles multiple flies simultaneously
+- **Trajectory Analysis**: Complete movement path reconstruction
+- **Behavioral Classification**: Automatic behavior pattern recognition
+
+### Key Features
+- **Real-time Processing**: Efficient tracking pipeline
+- **Data Integration**: Seamless integration with pose estimation
+- **Result Export**: Multiple output formats for analysis
+- **Visualization**: Interactive tracking visualizations
+
+## Task 4: Behavioral Analysis Overview
+
+### Analysis Capabilities
+- **Movement Analysis**: Speed, acceleration, and trajectory analysis
+- **Spatial Behavior**: Regional occupancy and preference analysis
+- **Temporal Patterns**: Time-series behavioral analysis
+- **Statistical Analysis**: Advanced statistical modeling and clustering
+
+### Visualization Tools
+- **Research Dashboards**: Publication-ready visualizations
+- **Behavioral Clusters**: Automated behavior pattern identification
+- **Correlation Analysis**: Behavioral correlation matrices
+- **Enhanced Visualizations**: Multi-dimensional behavioral insights
 
 ## Task 1: Data Overview
 
