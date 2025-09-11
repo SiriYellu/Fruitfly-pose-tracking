@@ -1,0 +1,31 @@
+# Task 3: Fly Tracking Configuration
+
+# Association parameters
+max_disappeared: 10          # Frames to maintain missing track
+max_distance: 0.1            # Max distance for association
+pose_weight: 0.7             # Weight for pose similarity
+bbox_weight: 0.3             # Weight for bbox similarity
+
+# Track validation
+min_track_length: 3          # Minimum frames for valid track
+max_track_length: 1000       # Maximum frames for track
+confidence_threshold: 0.5    # Minimum detection confidence
+
+# Processing parameters
+frame_rate: 30               # Expected frame rate
+batch_size: 1                # Frames processed at once
+memory_limit: 1000           # Max tracks in memory
+
+# Output settings
+save_trajectories: true      # Save detailed trajectory data
+save_summary: true           # Save tracking summary
+save_visualization: false    # Save track visualization
+output_format: "json"        # Output format (json/csv)
+
+# Visualization settings
+track_colors: true           # Use different colors for tracks
+show_track_ids: true         # Display track IDs
+show_confidence: true        # Display detection confidence
+line_thickness: 2            # Track line thickness
+
+
