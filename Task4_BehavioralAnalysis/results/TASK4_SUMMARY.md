@@ -1,6 +1,6 @@
 # Task 4: Behavioral Feature Extraction - Summary Report
 
-**Generated:** 2025-09-16 12:11:37
+
 
 ## Overview
 This report summarizes the behavioral analysis results from tracked fruit fly data.
@@ -62,9 +62,3 @@ This report summarizes the behavioral analysis results from tracked fruit fly da
 - **Stationary Threshold:** 0.1 mm/s
 - **Turn Threshold:** 30 degrees
 
-## Next Steps
-
-1. Review the generated visualizations for behavioral insights
-2. Compare behavioral metrics across different experimental conditions
-3. Perform statistical analysis on the detailed metrics
-4. Export data for further analysis in specialized software
