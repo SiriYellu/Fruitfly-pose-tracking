@@ -42,8 +42,8 @@ class BehavioralAnalyzer:
     def __init__(self, 
                  frame_rate: float = 30.0,
                  pixel_to_mm: float = 0.1,  # Conversion factor
-                 activity_threshold: float = 0.5,  # mm/s
-                 stationary_threshold: float = 0.1,  # mm/s
+                 activity_threshold: float = 0.05,  # mm/s (reduced for normalized coords)
+                 stationary_threshold: float = 0.01,  # mm/s (reduced)
                  turn_threshold: float = 30.0):  # degrees
         self.frame_rate = frame_rate
         self.pixel_to_mm = pixel_to_mm
@@ -113,16 +113,22 @@ class BehavioralAnalyzer:
     def classify_region(self, position: Tuple[float, float], image_width: float = 640, image_height: float = 480) -> str:
         """Classify position into vial regions"""
         x, y = position
-        x_norm = x / image_width
-        y_norm = y / image_height
         
-        # Define regions (adjust based on your vial setup)
-        if 0.2 <= x_norm <= 0.8 and 0.2 <= y_norm <= 0.8:
+        # Data is already normalized (0-1), so use directly
+        x_norm = x
+        y_norm = y
+        
+        # Define regions based on actual data ranges (X: 0.27-0.96, Y: 0.34-0.78)
+        # Center: middle area
+        if 0.4 <= x_norm <= 0.8 and 0.4 <= y_norm <= 0.7:
             return "center"
-        elif x_norm < 0.2 or x_norm > 0.8 or y_norm < 0.2 or y_norm > 0.8:
-            return "edge"
-        else:
+        # Corner: extreme regions within actual data range
+        elif (x_norm < 0.35 and y_norm < 0.45) or (x_norm > 0.85 and y_norm < 0.45) or \
+             (x_norm < 0.35 and y_norm > 0.75) or (x_norm > 0.85 and y_norm > 0.75):
             return "corner"
+        # Everything else is edge
+        else:
+            return "edge"
     
     def analyze_track(self, track_data: Dict) -> BehavioralMetrics:
         """Analyze behavioral metrics for a single track"""
@@ -419,5 +425,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 

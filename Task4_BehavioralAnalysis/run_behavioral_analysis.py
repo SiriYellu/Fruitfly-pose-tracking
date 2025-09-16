@@ -32,12 +32,11 @@ def run_command(command: str, description: str) -> bool:
             print("Stderr:", e.stderr)
         return False
 
-def check_prerequisites():
+def check_prerequisites(trajectories_file):
     """Check if required files and dependencies exist"""
     print("Checking prerequisites...")
     
-    # Check if Task 3 results exist
-    trajectories_file = "/mnt/storage5/Fruitfly/Task3_FlyTracking/results/tracking_results/trajectories.json"
+    # Check if trajectories file exists
     if not os.path.exists(trajectories_file):
         print(f"✗ Trajectories file not found: {trajectories_file}")
         print("Please run Task 3 first to generate tracking results")
@@ -248,7 +247,7 @@ def main():
     
     # Check prerequisites
     if not args.skip_prereq_check:
-        if not check_prerequisites():
+        if not check_prerequisites(args.trajectories_file):
             print("\n✗ Prerequisites not met. Please fix the issues above and try again.")
             return False
     
@@ -286,5 +285,6 @@ def main():
 if __name__ == "__main__":
     success = main()
     sys.exit(0 if success else 1)
+
 
 

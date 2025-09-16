@@ -21,23 +21,23 @@ class BehavioralVisualizer:
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         
-        # Set radium-inspired color palette
+        # Set professional color palette
         self.colors = {
-            'primary': '#00FF41',      # Bright radium green
-            'secondary': '#00E6FF',    # Cyan blue
-            'accent': '#FF6B00',       # Orange
-            'warning': '#FFD700',      # Gold
-            'danger': '#FF1744',       # Red
-            'info': '#3F51B5',         # Indigo
-            'success': '#4CAF50',      # Green
-            'dark': '#1A1A1A',         # Dark background
-            'light': '#F5F5F5',        # Light background
-            'text': '#FFFFFF',         # White text
+            'primary': '#2E86AB',      # Professional blue
+            'secondary': '#A23B72',    # Professional purple
+            'accent': '#F18F01',       # Professional orange
+            'warning': '#C73E1D',      # Professional red
+            'danger': '#D32F2F',       # Professional red
+            'info': '#1976D2',         # Professional blue
+            'success': '#2D7D32',      # Professional green
+            'dark': '#FFFFFF',         # White background
+            'light': '#F8F9FA',        # Light background
+            'text': '#333333',         # Dark text
             'text_dark': '#333333'     # Dark text
         }
         
         # Set modern style
-        plt.style.use('dark_background')
+        plt.style.use('default')
         sns.set_palette([self.colors['primary'], self.colors['secondary'], 
                         self.colors['accent'], self.colors['warning']])
         
@@ -63,7 +63,7 @@ class BehavioralVisualizer:
         return metrics_df, summary
     
     def create_speed_analysis(self, df: pd.DataFrame):
-        """Create speed analysis visualizations with radium palette"""
+        """Create speed analysis visualizations with professional colors"""
         fig, axes = plt.subplots(2, 2, figsize=(16, 12))
         fig.patch.set_facecolor(self.colors['dark'])
         fig.suptitle('🚀 SPEED ANALYSIS - Fruit Fly Movement Patterns', 
@@ -128,7 +128,7 @@ class BehavioralVisualizer:
         plt.close()
     
     def create_movement_analysis(self, df: pd.DataFrame):
-        """Create movement pattern analysis visualizations with radium palette"""
+        """Create movement pattern analysis visualizations with professional colors"""
         fig, axes = plt.subplots(2, 2, figsize=(16, 12))
         fig.patch.set_facecolor(self.colors['dark'])
         fig.suptitle('🏃 MOVEMENT PATTERN ANALYSIS - Activity & Behavior', 
@@ -202,7 +202,7 @@ class BehavioralVisualizer:
         plt.close()
     
     def create_region_analysis(self, df: pd.DataFrame):
-        """Create region occupancy analysis visualizations with radium palette"""
+        """Create region occupancy analysis visualizations with professional colors"""
         fig, axes = plt.subplots(2, 2, figsize=(16, 12))
         fig.patch.set_facecolor(self.colors['dark'])
         fig.suptitle('🗺️ SPATIAL BEHAVIOR ANALYSIS - Region Occupancy Patterns', 
@@ -232,9 +232,11 @@ class BehavioralVisualizer:
         region_preference = df[['time_in_center', 'time_in_edge', 'time_in_corner']].idxmax(axis=1)
         region_counts = region_preference.value_counts()
         
+        # Create explode array matching the number of regions
+        explode = [0.05] * len(region_counts)
         wedges, texts, autotexts = axes[0, 1].pie(region_counts.values, labels=region_counts.index, 
                                                  autopct='%1.1f%%', startangle=90, colors=region_colors,
-                                                 explode=[0.05, 0.05, 0.05], shadow=True, alpha=0.8)
+                                                 explode=explode, shadow=True)
         axes[0, 1].set_title('🎯 Primary Region Preference Distribution', fontsize=16, color=self.colors['warning'])
         
         # Enhance pie chart text
