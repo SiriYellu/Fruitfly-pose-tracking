@@ -22,11 +22,11 @@ Train state-of-the-art YOLO pose estimation models on Roboflow fruit fly dataset
 | YOLO11n-pose | 95.1% | 64.0% | 84.9% | 5.6MB | 2.7M |  Fast |
 
 ###  **Auto-labeling Results**
-- ** Images Processed**: 240/240 (100% success rate)
-- ** Total Flies Detected**: 15,701 flies
-- ** Average per Image**: 65.42 flies per image
-- ** Processing Speed**: ~6.5ms per image
-- ** Keypoints**: 3 per fly (Head 🟢, Thorax 🔵, Abdomen 🔴)
+-  Images Processed: 240/240 (100% success rate)
+- Total Flies Detected: 15,701 flies
+- Average per Image: 65.42 flies per image
+- Processing Speed: ~6.5ms per image
+- Keypoint: 3 per fly (Head 🟢, Thorax 🔵, Abdomen 🔴)
 
 ##  **Directory Structure**
 
@@ -193,7 +193,7 @@ names: ['Fruitfly']  # Class name
 - Clear keypoint connections
 - Color-coded keypoints (Head=Green, Thorax=Blue, Abdomen=Red)
 
-## 📈 **Performance Metrics**
+## **Performance Metrics**
 
 ### **Training Metrics**
 - **Box Loss**: 1.685 (final epoch)
@@ -291,8 +291,8 @@ For questions or issues:
 
 ---
 
-*Generated on: $(date)*
-*Total Processing Time: ~2 hours*
-*Models Trained: 4*
-*Images Processed: 240*
-*Flies Detected: 15,701*
+
+Total Processing Time: ~2 hours
+Models Trained: 4
+Images Processed: 240
+Flies Detected: 15,701
