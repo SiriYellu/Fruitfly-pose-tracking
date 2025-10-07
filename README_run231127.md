@@ -261,7 +261,3 @@ The analysis reveals distinct behavioral patterns between the two vials, with si
 
 ---
 
-### Recent Additions (October 6, 2025)
-- **Speed Histogram Analysis**: Added detailed speed distribution plots for moving flies
-- **Methodology Documentation**: Documented that speed is measured using bounding box center (not body keypoints)
-- **Distribution Statistics**: Computed comprehensive statistics from 45M+ detections across 24 hours
