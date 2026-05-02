@@ -31,13 +31,26 @@ Pose-based detection and multi-fly tracking for *Drosophila* in standard food-vi
 ├── results/
 │   ├── training_metrics.csv    # Epoch-by-epoch log (validation)
 │   ├── training_curves/        # Publication-style PNG curves
-│   └── confusion_matrices/
-├── docs/                       # Step-by-step narratives
+│   ├── confusion_matrices/
+│   └── tracked_videos/         # Sample MP4s with pose/track overlays after inference├── docs/                       # Step-by-step narratives
 ├── examples/
 │   └── load_and_infer.py
 ```
 
 See [`CHANGELOG.md`](CHANGELOG.md) for v2 restructuring notes.
+
+---
+
+## Sample videos (model applied)
+
+Qualitative demos with **detections / keypoints / track IDs overlaid**:
+
+| Clip | Location |
+|------|-----------|
+| ~8 s, full-res (~32 MB) | [`results/tracked_videos/sample_pose_bytetrack_8s.mp4`](results/tracked_videos/sample_pose_bytetrack_8s.mp4) |
+| ~8 s, 720p preview (~1 MB) | [`results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4`](results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4) |
+
+See [`results/tracked_videos/README.md`](results/tracked_videos/README.md) for provenance.
 
 ---
 

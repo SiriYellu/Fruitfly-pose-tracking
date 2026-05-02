@@ -2,6 +2,10 @@
 
 ## [2.0.0] – 2026-05-02
 
+### Additions (tracked video samples)
+
+- `results/tracked_videos/` — example MP4s with pose/tracking overlays (~8 s full-res + 720p preview), sourced from lab `annotated_videos_30sec`.
+
 ### Repository restructure
 
 - Single top-level layout: `weights/`, `scripts/`, `dataset/`, `data/samples/`, `results/`, `configs/`, `docs/`, `examples/`.
