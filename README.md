@@ -2,7 +2,7 @@
 
 Pose-based detection and multi-fly tracking for *Drosophila* in standard food-vial recordings (approximately **2448×2048**, 30 fps). This repository ships a trained **YOLO11m-Pose** model (**three keypoints**: head, thorax, abdomen), inference scripts (**ByteTrack**), a small reproducible **YOLO dataset** slice, and **exported training metrics / figures**.
 
-> **Important (GitHub limits):** Individual files cannot exceed **100 MB**. Multi-gigabyte tracking CSV bundles (full 24-hour run, combined dual-vial file) are documented in [`docs/06_large_tracking_assets.md`](docs/06_large_tracking_assets.md)—host them separately (Zenodo, institutional storage, Release assets, rsync mirror).
+> **Large tracking bundle:** run **231127** curvature-corrected exports live under **`data/run231127_github_release/`** as **XZ** shards, stored with **[Git LFS](https://git-lfs.com/)** (~6 GB payload). Install `git-lfs`, run **`git lfs install`** once, then **`git lfs pull`** after clone so the `.xz` files materialize as real archives—not the small pointer stubs Git stores in commits. Plain Git cannot accept a multi-gigabyte single push pack on GitHub, so Git LFS is required for this subtree; see **`data/run231127_github_release/README.md`** and [`docs/06_large_tracking_assets.md`](docs/06_large_tracking_assets.md).
 
 ---
 
