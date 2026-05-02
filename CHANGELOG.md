@@ -2,6 +2,10 @@
 
 ## [2.4.0] – 2026-05-02
 
+### Extra batch demo videos
+
+- **`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_batch/`** — three additional **~8 s** full-res clips (**~32 MB** each), same lineage as `annotated_video_01`; documented in `sample_batch/README.md` and linked from root **`README.md`**.
+
 ### Repo layout matches pipeline stages
 
 - **`dataset/`**, **`configs/`**, and **`weights/`** → **`pipeline/stages/stage_02_dataset_config_weights/`**

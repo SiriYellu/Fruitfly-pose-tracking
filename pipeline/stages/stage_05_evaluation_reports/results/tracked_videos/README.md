@@ -7,7 +7,9 @@ These clips show detections **after** inference with the YOLO pose model (boundi
 | `sample_pose_bytetrack_8s.mp4` | Full-resolution sample (~8 s, ~32 MB): vials with overlays from your trained pose + tracking stack. |
 | `sample_pose_bytetrack_preview_720p.mp4` | Lightweight H.264 preview (~720 px height, no audio) for quick viewing or embedding in decks. |
 
-**Source on lab disk:** copied from  
+**Extra vials for batch QA:** [`sample_batch/`](sample_batch/) holds three more **~8 s** clips (~32 MB each), same lineage as clip 01—see [`sample_batch/README.md`](sample_batch/README.md).
+
+**Source on lab disk:** primary clip copied from  
 `Traingagain/05_Annotations/annotated_videos_30sec/annotated_video_01.mp4`.
 
 Regenerate variants from any new `.mp4` with:
