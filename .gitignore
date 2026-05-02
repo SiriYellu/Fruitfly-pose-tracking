@@ -5,63 +5,34 @@ __pycache__/
 *.so
 .Python
 build/
-develop-eggs/
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
 *.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+.eggs/
 
 # Virtual environments
 venv/
 env/
-ENV/
-env.bak/
-venv.bak/
+.venv/
 
-# IDE
+# IDE / OS
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
-
-# OS
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+*.swp
 
-# Large data files (keep structure but not content)
-Data_Preparation/FlyData/
-Data_Preparation/fly_video_data.tar.gz
-Data_Preparation/extracted_frames/
-Data_Preparation/raw_videos/
+# Logs and local runs (do not ignore repo `results/` — tracked training outputs live there)
+**/runs/
+**/*.log
+**/wandb/
 
-# Model files (too large for git)
-*.pt
-*.pth
-*.onnx
-*.engine
+# Oversized artifacts — keep pointers in docs instead of committing multi-GB CSVs here
+**/FlyData/
+**/fly_video_data.tar.gz
+**/raw_videos/
 
-# Results and logs
-runs/
-results/
-logs/
-*.log
+# Generated during inference / local experiments
+**/outputs_preview/
+**/inference_scratch/
 
-# Temporary files
-*.tmp
-*.temp
+# Optional: uncomment if you temporarily place huge files locally
+# data/tracking/full_release/

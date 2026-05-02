@@ -1,0 +1,18 @@
+# Paths relative to this file (YOLO resolves from dataset root)
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 1
+names: ['fruit_fly']
+
+# 3 keypoints × (x,y,visibility) in Ultralytics convention
+kpt_shape: [3, 3]
+flip_idx: [0, 1, 2]
+
+roboflow:
+  workspace: 2023-flyviallmagedata
+  project: fruit-fly-pose-tracking-rrhal
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/2023-flyviallmagedata/fruit-fly-pose-tracking-rrhal/dataset/3

@@ -1,0 +1,34 @@
+# Repo-relative paths assume you launch scripts from repo root unless noted.
+
+model:
+  path: weights/fruitfly_pose_yolo11m.pt
+  confidence_threshold: 0.28
+  iou_threshold: 0.7
+  device: "cuda:0"
+
+tracking:
+  algorithm: bytetrack
+  persist: true
+  tracker_yaml: bytetrack.yaml
+
+video:
+  frame_rate: 30
+  resolution_note: "Trained/evaluated on 2448x2048 vial videos"
+
+output:
+  save_csv: true
+  save_video: false
+
+keypoints:
+  num_keypoints: 3
+  names: ["head", "thorax", "abdomen"]
+
+vial_geometry:
+  separation_x_px: 1556.5
+  radius_mm: 11.8
+  pixel_to_mm: 0.063
+
+behavioral_defaults:
+  bout_min_duration_frames: 30
+  bout_high_px: 10
+  bout_low_px: 3
