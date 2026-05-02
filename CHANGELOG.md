@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0] – 2026-05-02
+
+### Docker & replication
+
+- `Dockerfile.gpu` — PyTorch **2.4.1 + CUDA 12.1** runtime + pinned Ultralytics stack (`requirements-docker.txt`).
+- `Dockerfile.cpu` — CPU-only smoke image for import / single-image predict checks.
+- `docker-compose.yml` — `gpu`, `gpu-train`, `gpu-track`, `cpu-smoke` services; host bind-mount for `runs/` and outputs.
+- `Makefile` — convenience targets (`docker-shell-gpu`, `docker-train-sm`, …).
+- `docs/TRAINING_STAGES.md` — numbered pipeline from environment to inference.
+- `docs/DOCKER.md` — build/run recipes and GPU troubleshooting.
+- `data/external_videos/README.md` — where to drop input MP4s for compose tracking.
+
 ## [2.0.0] – 2026-05-02
 
 ### Additions (tracked video samples)

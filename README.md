@@ -32,7 +32,12 @@ Pose-based detection and multi-fly tracking for *Drosophila* in standard food-vi
 │   ├── training_metrics.csv    # Epoch-by-epoch log (validation)
 │   ├── training_curves/        # Publication-style PNG curves
 │   ├── confusion_matrices/
-│   └── tracked_videos/         # Sample MP4s with pose/track overlays after inference├── docs/                       # Step-by-step narratives
+│   └── tracked_videos/         # Sample MP4s with pose/track overlays after inference
+├── docs/                       # Step-by-step narratives + Docker + pipeline stages
+├── docker-compose.yml
+├── Dockerfile.gpu
+├── Dockerfile.cpu
+├── Makefile                    # shortcut: make docker-shell-gpu, etc.
 ├── examples/
 │   └── load_and_infer.py
 ```
@@ -114,6 +119,26 @@ Full 48 × 30 min exports + merged >10 GB corpus: [`docs/06_large_tracking_asset
 
 ---
 
+## Reproducibility — training stages & Docker
+
+| Resource | Purpose |
+|----------|---------|
+| [`docs/TRAINING_STAGES.md`](docs/TRAINING_STAGES.md) | Numbered pipeline: environment → dataset → train → weights → track |
+| [`docs/DOCKER.md`](docs/DOCKER.md) | GPU/CPU images, Compose services, troubleshooting |
+| `Dockerfile.gpu` / `Dockerfile.cpu` | Pinned PyTorch CUDA base + Ultralytics deps |
+| `requirements-docker.txt` | Version-pinned installs **on top** of the GPU base image |
+| `docker-compose.yml` | `gpu`, `gpu-train`, `gpu-track`, `cpu-smoke` services |
+| `Makefile` | `make docker-shell-gpu`, `make docker-train-sm`, etc.
+
+Quick GPU shell:
+
+```bash
+docker compose build gpu
+docker compose run --rm --gpus all gpu bash
+```
+
+---
+
 ## Documentation index
 
 | Doc | Topics |
@@ -122,9 +147,11 @@ Full 48 × 30 min exports + merged >10 GB corpus: [`docs/06_large_tracking_asset
 | [`docs/01_setup.md`](docs/01_setup.md) | Python, CUDA, common install failures |
 | [`docs/02_data.md`](docs/02_data.md) | Annotations, keypoint order, Roboflow |
 | [`docs/03_training.md`](docs/03_training.md) | Resolution scaling, epochs, GPUs |
+| [`docs/TRAINING_STAGES.md`](docs/TRAINING_STAGES.md) | Stage table — easiest replication roadmap |
 | [`docs/04_inference.md`](docs/04_inference.md) | Confidence, trackers, throughput |
 | [`docs/05_training_and_metrics.md`](docs/05_training_and_metrics.md) | Parsing `training_metrics.csv` |
 | [`docs/06_large_tracking_assets.md`](docs/06_large_tracking_assets.md) | Multi-GB bundles & hosting playbook |
+| [`docs/DOCKER.md`](docs/DOCKER.md) | Docker + Compose recipes |
 
 ---
 

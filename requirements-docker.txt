@@ -1,0 +1,7 @@
+# Pinned-ish stack for reproducible Docker builds (edit versions when auditing).
+# Base image ships PyTorch + CUDA — do not reinstall torch/torchvision here.
+ultralytics==8.3.104
+opencv-python-headless==4.10.0.84
+pandas==2.2.3
+numpy==1.26.4
+PyYAML==6.0.2

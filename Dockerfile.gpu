@@ -1,0 +1,30 @@
+# GPU training + inference (NVIDIA Container Toolkit required).
+#
+# PyTorch CUDA build is pinned by this base image tag; Ultralytics installs on top.
+# See docs/DOCKER.md for build/run examples.
+#
+# Compatible with hosts where `nvidia-smi` works and Docker has GPU access.
+
+FROM pytorch/pytorch:2.4.1-cuda12.1-cudnn9-runtime
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    DEBIAN_FRONTEND=noninteractive
+
+# libGL/GTK not needed with opencv-python-headless; ffmpeg for video IO is useful
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ffmpeg \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace
+
+COPY requirements-docker.txt .
+RUN pip install --upgrade pip && \
+    pip install -r requirements-docker.txt
+
+COPY . /workspace
+
+# Default: show help-style entry (override in compose / docker run).
+CMD ["python", "scripts/train_scaled_model.py", "--help"]

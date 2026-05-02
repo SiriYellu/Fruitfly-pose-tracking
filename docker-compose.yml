@@ -1,0 +1,61 @@
+services:
+  # GPU passthrough requires: Docker + NVIDIA Container Toolkit. Example:
+  #   docker compose run --rm --gpus all gpu python scripts/train_scaled_model.py --help
+  #   IMG_SIZE=2448 BATCH=4 EPOCHS=200 docker compose run --rm --gpus all gpu-train
+  gpu:
+    build:
+      context: .
+      dockerfile: Dockerfile.gpu
+    image: fruitfly-pose:gpu
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    shm_size: 8gb
+    ipc: host
+    stdin_open: true
+    tty: true
+    environment:
+      NVIDIA_VISIBLE_DEVICES: "${NVIDIA_VISIBLE_DEVICES:-all}"
+
+  gpu-train:
+    extends: gpu
+    command:
+      - python
+      - scripts/train_scaled_model.py
+      - --dataset
+      - dataset/yolo_pose
+      - --project
+      - runs/train
+      - --epochs
+      - "${EPOCHS:-10}"
+      - --imgsz
+      - "${IMG_SIZE:-640}"
+      - --batch
+      - "${BATCH:-2}"
+
+  gpu-track:
+    extends:
+      service: gpu
+    volumes:
+      - ./:/workspace
+      - ./data/external_videos:/videos:ro
+    command:
+      - python
+      - scripts/track_video.py
+      - --video
+      - "${VIDEO:-/workspace/results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4}"
+      - --output
+      - outputs/docker_track/
+
+  cpu-smoke:
+    build:
+      context: .
+      dockerfile: Dockerfile.cpu
+    image: fruitfly-pose:cpu
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    shm_size: 2gb
+    command:
+      - python
+      - examples/load_and_infer.py

@@ -1,0 +1,21 @@
+# Git / local
+.git
+.gitignore
+
+# Virtualenvs (use image env instead)
+.venv/
+venv/
+env/
+
+# Training outputs rebuilt inside container mounts
+**/runs/train/
+**/outputs/
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# IDE
+.idea/
+.vscode/
