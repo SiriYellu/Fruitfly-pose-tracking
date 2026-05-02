@@ -6,10 +6,10 @@ for your scaled/full-resolution dataset (see docs/03_training.md).
 
 Canonical path (pipeline stage 03):
   python pipeline/stages/stage_03_training/train_scaled_model.py \\
-    --dataset dataset/yolo_pose --project runs/train
+    --dataset pipeline/stages/stage_02_dataset_config_weights/dataset/yolo_pose --project runs/train
 
 Back-compat symlink:
-  python scripts/train_scaled_model.py --dataset dataset/yolo_pose --project runs/train
+  python scripts/train_scaled_model.py --dataset pipeline/stages/stage_02_dataset_config_weights/dataset/yolo_pose --project runs/train
 """
 
 from __future__ import annotations
@@ -22,6 +22,7 @@ import torch
 from ultralytics import YOLO
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
+STAGE_02 = REPO_ROOT / "pipeline" / "stages" / "stage_02_dataset_config_weights"
 
 
 def train_scaled(dataset_dir: Path, project: Path, run_name: str | None = None, epochs: int = 200, imgsz: int = 2448, batch: int = 4) -> Path:
@@ -90,7 +91,7 @@ def train_scaled(dataset_dir: Path, project: Path, run_name: str | None = None, 
 
 def main() -> None:
     p = argparse.ArgumentParser()
-    p.add_argument("--dataset", type=Path, default=REPO_ROOT / "dataset" / "yolo_pose", help="Folder containing data.yaml train/ valid/ test/")
+    p.add_argument("--dataset", type=Path, default=STAGE_02 / "dataset" / "yolo_pose", help="Folder containing data.yaml train/ valid/ test/")
     p.add_argument("--project", type=Path, default=REPO_ROOT / "runs" / "train", help="Ultralytics project dir")
     p.add_argument("--name", default=None)
     p.add_argument("--epochs", type=int, default=200)

@@ -14,7 +14,7 @@ python scripts/train_scaled_model.py \
 Key ideas:
 
 1. Matching **effective training magnification** prevents subtle scale-shift between metrics and deployments.
-2. Patience defaults align with plateau behavior observed historically (consult `results/training_metrics.csv`).
+2. Patience defaults align with plateau behavior observed historically (consult [`pipeline/stages/stage_05_evaluation_reports/results/training_metrics.csv`](../pipeline/stages/stage_05_evaluation_reports/results/training_metrics.csv)).
 3. Lower `--imgsz` or `--batch` if GPU VRAM constrained.
 
 Ordered pipeline table: [**`TRAINING_STAGES.md`**](TRAINING_STAGES.md). Reproducible GPU training via Docker: [**`DOCKER.md`**](DOCKER.md) (`gpu-train`).

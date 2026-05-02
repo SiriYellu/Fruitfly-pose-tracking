@@ -14,7 +14,7 @@ Important flags:
 
 | Flag | Default | Notes |
 |------|---------|-------|
-| `--model` | `weights/fruitfly_pose_yolo11m.pt` | Alternate fine-tuned weights OK |
+| `--model` | `pipeline/stages/stage_02_dataset_config_weights/weights/fruitfly_pose_yolo11m.pt` | Alternate fine-tuned weights OK |
 | `--conf` | 0.28 | Confidence |
 | `--iou` | 0.7 | NMS IoU overlap |
 | `--device` | `cuda:0` | Fallback `cpu` possible |

@@ -18,7 +18,7 @@ docker compose build cpu-smoke
 
 ```bash
 docker compose run --rm --gpus all gpu bash
-python examples/load_and_infer.py
+python pipeline/stages/stage_04_inference_tracking/load_and_infer.py
 ```
 
 ### Training
@@ -45,7 +45,7 @@ Artifacts appear under `./runs/train/` on the host.
 
 If `VIDEO` is unset, the container uses the small bundled demo:
 
-`/workspace/results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4`
+`/workspace/pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4`
 
 ```bash
 docker compose run --rm --gpus all gpu-track
@@ -63,7 +63,7 @@ VIDEO=/videos/my_clip.mp4 docker compose run --rm --gpus all gpu-track
 docker compose run --rm cpu-smoke
 ```
 
-Enough to verify installs and [`examples/load_and_infer.py`](../examples/load_and_infer.py); impractical for 2448 training.
+Enough to verify installs and [`pipeline/stages/stage_04_inference_tracking/load_and_infer.py`](../pipeline/stages/stage_04_inference_tracking/load_and_infer.py); impractical for 2448 training.
 
 ### Pinned stacks
 

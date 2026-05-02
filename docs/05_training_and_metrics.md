@@ -3,9 +3,9 @@
 Contained resources:
 
 ```
-results/training_metrics.csv
-results/training_curves/*.png
-results/confusion_matrices/*.png
+pipeline/stages/stage_05_evaluation_reports/results/training_metrics.csv
+pipeline/stages/stage_05_evaluation_reports/results/training_curves/*.png
+pipeline/stages/stage_05_evaluation_reports/results/confusion_matrices/*.png
 ```
 
 Interpret `metrics/mAP50(P)` and `metrics/mAP50-95(P)` columns as pose-specific aggregates on the packaged validation regimen.

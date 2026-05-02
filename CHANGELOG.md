@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.4.0] – 2026-05-02
+
+### Repo layout matches pipeline stages
+
+- **`dataset/`**, **`configs/`**, and **`weights/`** → **`pipeline/stages/stage_02_dataset_config_weights/`**
+- **`results/`** (metrics, curves, sample MP4s) → **`pipeline/stages/stage_05_evaluation_reports/results/`**
+- **`examples/load_and_infer.py`** → **`pipeline/stages/stage_04_inference_tracking/load_and_infer.py`** (root **`examples/README.md`** points here)
+- Training / tracking **defaults** and **`configs/tracking.yaml`** now reference repo-root paths under **`pipeline/stages/stage_02_dataset_config_weights/`**. Docker Compose, **`Dockerfile.cpu`**, and docs updated accordingly.
+
 ## [2.3.0] – 2026-05-02
 
 ### Pipeline stages (canonical code paths)

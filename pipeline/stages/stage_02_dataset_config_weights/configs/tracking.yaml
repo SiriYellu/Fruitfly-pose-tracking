@@ -1,7 +1,7 @@
-# Repo-relative paths assume you launch scripts from repo root unless noted.
+# Paths are relative to the repository root (working directory when launching tools).
 
 model:
-  path: weights/fruitfly_pose_yolo11m.pt
+  path: pipeline/stages/stage_02_dataset_config_weights/weights/fruitfly_pose_yolo11m.pt
   confidence_threshold: 0.28
   iou_threshold: 0.7
   device: "cuda:0"

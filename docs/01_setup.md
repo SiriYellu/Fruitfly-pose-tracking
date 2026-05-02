@@ -16,7 +16,7 @@ Adjust CUDA wheel index (`cu126`, `cu121`, CPU-only, etc.) to match host drivers
 Smoke test inference:
 
 ```bash
-python examples/load_and_infer.py
+python pipeline/stages/stage_04_inference_tracking/load_and_infer.py
 ```
 
 ## Troubleshooting

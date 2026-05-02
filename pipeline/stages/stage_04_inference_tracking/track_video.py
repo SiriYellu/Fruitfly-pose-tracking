@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Track fruit flies in vial videos with YOLO11m-Pose + ByteTrack.
-Default model path resolves to weights/fruitfly_pose_yolo11m.pt at repo root.
+Default weights: pipeline/stages/stage_02_dataset_config_weights/weights/fruitfly_pose_yolo11m.pt
 
 Canonical path (pipeline stage 04):
   python pipeline/stages/stage_04_inference_tracking/track_video.py \\
@@ -27,7 +27,8 @@ except ImportError:
     sys.exit(1)
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
-DEFAULT_MODEL = REPO_ROOT / "weights" / "fruitfly_pose_yolo11m.pt"
+STAGE_02 = REPO_ROOT / "pipeline" / "stages" / "stage_02_dataset_config_weights"
+DEFAULT_MODEL = STAGE_02 / "weights" / "fruitfly_pose_yolo11m.pt"
 
 
 class FlyTracker:

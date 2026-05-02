@@ -24,7 +24,7 @@ services:
       - python
       - scripts/train_scaled_model.py
       - --dataset
-      - dataset/yolo_pose
+      - pipeline/stages/stage_02_dataset_config_weights/dataset/yolo_pose
       - --project
       - runs/train
       - --epochs
@@ -44,7 +44,7 @@ services:
       - python
       - scripts/track_video.py
       - --video
-      - "${VIDEO:-/workspace/results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4}"
+      - "${VIDEO:-/workspace/pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4}"
       - --output
       - outputs/docker_track/
 
@@ -59,4 +59,4 @@ services:
     shm_size: 2gb
     command:
       - python
-      - examples/load_and_infer.py
+      - pipeline/stages/stage_04_inference_tracking/load_and_infer.py

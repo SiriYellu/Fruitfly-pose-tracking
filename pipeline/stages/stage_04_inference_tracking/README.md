@@ -6,8 +6,8 @@
 
 | File | Purpose |
 |------|---------|
-| [`track_video.py`](track_video.py) | Full-video tracking + CSV (default weights under `weights/`). |
-| [`../../../examples/load_and_infer.py`](../../../examples/load_and_infer.py) | One-image **`predict`** smoke (used by Compose `cpu-smoke`). |
+| [`track_video.py`](track_video.py) | Full-video tracking + CSV (default weights under **`../stage_02_dataset_config_weights/weights/`**). |
+| [`load_and_infer.py`](load_and_infer.py) | One-image **`predict`** smoke (used by Compose `cpu-smoke`). |
 
 **Example:**
 

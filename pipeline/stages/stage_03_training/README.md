@@ -8,7 +8,7 @@
 
 ```bash
 python pipeline/stages/stage_03_training/train_scaled_model.py \
-  --dataset dataset/yolo_pose --project runs/train --epochs 10 --imgsz 640 --batch 2
+  --dataset pipeline/stages/stage_02_dataset_config_weights/dataset/yolo_pose --project runs/train --epochs 10 --imgsz 640 --batch 2
 ```
 
 Equivalent (symlink): `python scripts/train_scaled_model.py …`

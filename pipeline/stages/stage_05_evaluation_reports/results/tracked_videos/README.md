@@ -15,5 +15,6 @@ Regenerate variants from any new `.mp4` with:
 ```bash
 python scripts/track_video.py --video your_clip.mp4 --output out_dir/
 ```
+(Same code: `pipeline/stages/stage_04_inference_tracking/track_video.py`.)
 
 For an annotated video export, use Ultralytics’ built-ins, e.g. `YOLO(...).predict(source=..., save=True)` or enable save in tracking per [Ultralytics tracking docs](https://docs.ultralytics.com/modes/track/).

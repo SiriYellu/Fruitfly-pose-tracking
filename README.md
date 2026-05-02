@@ -11,43 +11,36 @@ Pose-based detection and multi-fly tracking for *Drosophila* in standard food-vi
 ```
 .
 ├── CHANGELOG.md
-├── README.md                   # ← you are here
-├── LICENSE                     # MIT
+├── README.md
+├── LICENSE
 ├── requirements.txt
-├── configs/
-│   └── tracking.yaml           # Inference / geometry defaults (reference)
-├── weights/
-│   ├── README.md
-│   └── fruitfly_pose_yolo11m.pt   # Production checkpoint (~41 MB)
-├── pipeline/
-│   ├── README.md               # Stage 01–06 map (environment → publish)
-│   └── stages/
-│       ├── stage_01_environment/README.md
-│       ├── stage_02_dataset_config_weights/README.md
-│       ├── stage_03_training/train_scaled_model.py
-│       ├── stage_04_inference_tracking/track_video.py
-│       ├── stage_05_evaluation_reports/README.md
-│       └── stage_06_publish_release/package_run231127_github_release.sh
-├── scripts/                    # symlinks → pipeline/stages/ (Compose + back-compat CLI)
-├── dataset/
-│   └── yolo_pose/              # Minimal YOLO pose split + data.yaml (Roboflow lineage)
-├── data/
-│   ├── README.md
-│   ├── run231127_github_release/   # 48 per-video + 39 dual-vial shard XZ (~6 GB tracked)
-│   ├── roboflow/roboflow_export_yolov8_pose.zip
-│   └── samples/
-├── results/
-│   ├── training_metrics.csv    # Epoch-by-epoch log (validation)
-│   ├── training_curves/        # Publication-style PNG curves
-│   ├── confusion_matrices/
-│   └── tracked_videos/         # Sample MP4s with pose/track overlays after inference
-├── docs/                       # Step-by-step narratives + Docker + pipeline stages
-├── docker-compose.yml
+├── requirements-docker.txt
 ├── Dockerfile.gpu
 ├── Dockerfile.cpu
-├── Makefile                    # shortcut: make docker-shell-gpu, etc.
-├── examples/
-│   └── load_and_infer.py
+├── docker-compose.yml
+├── Makefile
+├── pipeline/
+│   ├── README.md
+│   └── stages/
+│       ├── stage_01_environment/README.md
+│       ├── stage_02_dataset_config_weights/
+│       │   ├── dataset/yolo_pose/        # data.yaml + train/valid/test
+│       │   ├── configs/tracking.yaml
+│       │   └── weights/fruitfly_pose_yolo11m.pt
+│       ├── stage_03_training/train_scaled_model.py
+│       ├── stage_04_inference_tracking/
+│       │   ├── track_video.py
+│       │   └── load_and_infer.py       # Compose cpu-smoke
+│       ├── stage_05_evaluation_reports/results/   # training_metrics.csv, curves, tracked_videos/, …
+│       └── stage_06_publish_release/package_run231127_github_release.sh
+├── scripts/                    # symlinks → executable stages above
+├── data/
+│   ├── README.md
+│   ├── run231127_github_release/   # Git LFS xz bundle (~6 GB)
+│   ├── roboflow/roboflow_export_yolov8_pose.zip
+│   └── samples/
+├── docs/
+└── examples/README.md           # pointers (smoke script lives in stage 04)
 ```
 
 See [`CHANGELOG.md`](CHANGELOG.md) for v2 restructuring notes. Canonical pipeline narrative: **[`pipeline/README.md`](pipeline/README.md)** ↔ [`docs/TRAINING_STAGES.md`](docs/TRAINING_STAGES.md).
@@ -60,10 +53,10 @@ Qualitative demos with **detections / keypoints / track IDs overlaid**:
 
 | Clip | Location |
 |------|-----------|
-| ~8 s, full-res (~32 MB) | [`results/tracked_videos/sample_pose_bytetrack_8s.mp4`](results/tracked_videos/sample_pose_bytetrack_8s.mp4) |
-| ~8 s, 720p preview (~1 MB) | [`results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4`](results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4) |
+| ~8 s, full-res (~32 MB) | [`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_8s.mp4`](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_8s.mp4) |
+| ~8 s, 720p preview (~1 MB) | [`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4`](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4) |
 
-See [`results/tracked_videos/README.md`](results/tracked_videos/README.md) for provenance.
+See [`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/README.md`](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/README.md) for provenance.
 
 ---
 
@@ -90,7 +83,7 @@ Detailed flags and Ultralytics quirks: [`docs/04_inference.md`](docs/04_inferenc
 
 ## Training / fine-tuning
 
-The production checkpoint was optimized on a **resolution-matched** (scaled/full-frame) annotated corpus. Bundled **`dataset/yolo_pose/`** is a **minimal** pedagogical subset (demo + sanity checks)—scale up privately with your expanded frames before expecting production-level metrics.
+The production checkpoint was optimized on a **resolution-matched** (scaled/full-frame) annotated corpus. Bundled **`pipeline/stages/stage_02_dataset_config_weights/dataset/yolo_pose/`** is a **minimal** pedagogical subset (demo + sanity checks)—scale up privately with your expanded frames before expecting production-level metrics.
 
 ```bash
 python scripts/train_scaled_model.py \
@@ -107,9 +100,9 @@ More context: [`docs/03_training.md`](docs/03_training.md).
 
 | Item | Location |
 |------|-----------|
-| Per-epoch validation metrics CSV | [`results/training_metrics.csv`](results/training_metrics.csv) |
-| Training curve PNG set | [`results/training_curves/`](results/training_curves/) |
-| Confusion-matrix PNG set | [`results/confusion_matrices/`](results/confusion_matrices/) |
+| Per-epoch validation metrics CSV | [`pipeline/stages/stage_05_evaluation_reports/results/training_metrics.csv`](pipeline/stages/stage_05_evaluation_reports/results/training_metrics.csv) |
+| Training curve PNG set | [`pipeline/stages/stage_05_evaluation_reports/results/training_curves/`](pipeline/stages/stage_05_evaluation_reports/results/training_curves/) |
+| Confusion-matrix PNG set | [`pipeline/stages/stage_05_evaluation_reports/results/confusion_matrices/`](pipeline/stages/stage_05_evaluation_reports/results/confusion_matrices/) |
 | Human-readable metric summary | [`docs/05_training_and_metrics.md`](docs/05_training_and_metrics.md) |
 
 Approximate headline numbers at **epoch 200** (see CSV): pose **mAP50 ≈ 0.985**, pose **mAP50–95 ≈ 0.975**.

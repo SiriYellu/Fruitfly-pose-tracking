@@ -24,4 +24,4 @@ RUN pip install -r requirements-docker.txt
 
 COPY . /workspace
 
-CMD ["python", "examples/load_and_infer.py"]
+CMD ["python", "pipeline/stages/stage_04_inference_tracking/load_and_infer.py"]
