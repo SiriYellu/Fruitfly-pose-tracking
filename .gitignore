@@ -36,3 +36,6 @@ env/
 
 # Optional: uncomment if you temporarily place huge files locally
 # data/tracking/full_release/
+
+# Portable toolchain (never commit)
+.tools/

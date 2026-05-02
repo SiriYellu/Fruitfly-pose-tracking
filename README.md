@@ -25,7 +25,8 @@ Pose-based detection and multi-fly tracking for *Drosophila* in standard food-vi
 ├── dataset/
 │   └── yolo_pose/              # Minimal YOLO pose split + data.yaml (Roboflow lineage)
 ├── data/
-│   ├── README.md               # Sample tracking CSVs shipped here
+│   ├── README.md
+│   ├── run231127_github_release/   # 48 per-video + 39 dual-vial shard XZ (~6 GB tracked)
 │   ├── roboflow/roboflow_export_yolov8_pose.zip
 │   └── samples/
 ├── results/
