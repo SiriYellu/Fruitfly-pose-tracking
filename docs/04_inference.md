@@ -1,6 +1,6 @@
 # Inference CLI
 
-Canonical script: `scripts/track_video.py`.
+Canonical script: `scripts/track_video.py` (symlink to [`pipeline/stages/stage_04_inference_tracking/track_video.py`](../pipeline/stages/stage_04_inference_tracking/track_video.py)).
 
 Core invocation:
 

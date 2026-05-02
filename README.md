@@ -19,9 +19,16 @@ Pose-based detection and multi-fly tracking for *Drosophila* in standard food-vi
 ├── weights/
 │   ├── README.md
 │   └── fruitfly_pose_yolo11m.pt   # Production checkpoint (~41 MB)
-├── scripts/
-│   ├── track_video.py          # Pose + ByteTrack → per-frame CSV
-│   └── train_scaled_model.py   # Full-resolution training starter
+├── pipeline/
+│   ├── README.md               # Stage 01–06 map (environment → publish)
+│   └── stages/
+│       ├── stage_01_environment/README.md
+│       ├── stage_02_dataset_config_weights/README.md
+│       ├── stage_03_training/train_scaled_model.py
+│       ├── stage_04_inference_tracking/track_video.py
+│       ├── stage_05_evaluation_reports/README.md
+│       └── stage_06_publish_release/package_run231127_github_release.sh
+├── scripts/                    # symlinks → pipeline/stages/ (Compose + back-compat CLI)
 ├── dataset/
 │   └── yolo_pose/              # Minimal YOLO pose split + data.yaml (Roboflow lineage)
 ├── data/
@@ -43,7 +50,7 @@ Pose-based detection and multi-fly tracking for *Drosophila* in standard food-vi
 │   └── load_and_infer.py
 ```
 
-See [`CHANGELOG.md`](CHANGELOG.md) for v2 restructuring notes.
+See [`CHANGELOG.md`](CHANGELOG.md) for v2 restructuring notes. Canonical pipeline narrative: **[`pipeline/README.md`](pipeline/README.md)** ↔ [`docs/TRAINING_STAGES.md`](docs/TRAINING_STAGES.md).
 
 ---
 
@@ -124,7 +131,8 @@ Full 48 × 30 min exports + merged >10 GB corpus: [`docs/06_large_tracking_asset
 
 | Resource | Purpose |
 |----------|---------|
-| [`docs/TRAINING_STAGES.md`](docs/TRAINING_STAGES.md) | Numbered pipeline: environment → dataset → train → weights → track |
+| [`pipeline/README.md`](pipeline/README.md) | **Stage 01–06**: code lives under `pipeline/stages/`; `scripts/` are symlinks |
+| [`docs/TRAINING_STAGES.md`](docs/TRAINING_STAGES.md) | Same roadmap with doc deep-links |
 | [`docs/DOCKER.md`](docs/DOCKER.md) | GPU/CPU images, Compose services, troubleshooting |
 | `Dockerfile.gpu` / `Dockerfile.cpu` | Pinned PyTorch CUDA base + Ultralytics deps |
 | `requirements-docker.txt` | Version-pinned installs **on top** of the GPU base image |
@@ -144,6 +152,7 @@ docker compose run --rm --gpus all gpu bash
 
 | Doc | Topics |
 |-----|--------|
+| [`pipeline/README.md`](pipeline/README.md) | Stage-numbered codebase map |
 | [`docs/00_overview.md`](docs/00_overview.md) | End-to-end pipeline narrative |
 | [`docs/01_setup.md`](docs/01_setup.md) | Python, CUDA, common install failures |
 | [`docs/02_data.md`](docs/02_data.md) | Annotations, keypoint order, Roboflow |

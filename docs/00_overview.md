@@ -2,6 +2,8 @@
 
 The pipeline progresses from annotated vial imagery to pose estimation, temporal association with ByteTrack, optional geometric correction downstream, then behavioral aggregates.
 
+Numbered folders and symlinks are summarized in [`pipeline/README.md`](../pipeline/README.md) and [`TRAINING_STAGES.md`](TRAINING_STAGES.md).
+
 Stages represented **in this repository**:
 
 1. **Annotations** aligned with Roboflow YOLO-pose conventions (three keypoints per fly instance).

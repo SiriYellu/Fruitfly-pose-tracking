@@ -1,6 +1,7 @@
 services:
   # GPU passthrough requires: Docker + NVIDIA Container Toolkit. Example:
   #   docker compose run --rm --gpus all gpu python scripts/train_scaled_model.py --help
+  #   Inside container same module: pipeline/stages/stage_03_training/train_scaled_model.py
   #   IMG_SIZE=2448 BATCH=4 EPOCHS=200 docker compose run --rm --gpus all gpu-train
   gpu:
     build:

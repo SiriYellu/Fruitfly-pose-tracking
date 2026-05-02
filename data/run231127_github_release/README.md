@@ -32,8 +32,10 @@ Verification: `wc -l` should report **45 879 875** lines (including header).
 ### Regenerate this folder from your local `final_reportings/`
 
 ```bash
-scripts/package_run231127_github_release.sh
+pipeline/stages/stage_06_publish_release/package_run231127_github_release.sh
 ```
+
+Or the same script via symlink: **`scripts/package_run231127_github_release.sh`**.
 
 (Edit `SRC_CLIP_DIR` / `SRC_DUAL` in the script if your paths differ.)
 

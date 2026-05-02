@@ -1,6 +1,6 @@
 # Training workflow
 
-Recommended entry (`repo` root assumed):
+Recommended entry (**`scripts/train_scaled_model.py`** is a symlink to **`pipeline/stages/stage_03_training/train_scaled_model.py`**; use either path):
 
 ```
 python scripts/train_scaled_model.py \

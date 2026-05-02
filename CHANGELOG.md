@@ -1,12 +1,20 @@
 # Changelog
 
+## [2.3.0] – 2026-05-02
+
+### Pipeline stages (canonical code paths)
+
+- New **`pipeline/stages/`** tree: **`stage_01_environment`** … **`stage_06_publish_release`** (`README.md` per stage plus executable files in train / inference / publish stages).
+- **`train_scaled_model.py`**, **`track_video.py`**, and **`package_run231127_github_release.sh`** live under **`pipeline/stages/`**; repo-root **`scripts/`** holds **symlinks** so Docker Compose and existing CLI examples keep working.
+- **`pipeline/README.md`**, **`scripts/README.md`**, and rewritten **`docs/TRAINING_STAGES.md`** document Stage **01–06** and map to **`docs/`** narratives.
+
 ## [2.2.0] – 2026-05-02
 
 ### Published curvature-corrected tracking bundle (XZ)
 
 - `data/run231127_github_release/` — **48** per-video curvature-corrected tracks (`Tracks_corrected_img0000.csv.xz` … `img0047.csv.xz`).
 - **`tracks_corrected_dual_vial.csv`**-equivalent shipped as **39** XZ chunks (`dual_vial/Tracks_corr_dual_vial.part*.csv.xz`); concatenate with sorted `xzcat`.
-- `scripts/package_run231127_github_release.sh` regenerates this tree from lab `tracks_corrected_clip*` + `tracks_corrected_dual_vial.csv`.
+- `pipeline/stages/stage_06_publish_release/package_run231127_github_release.sh` regenerates this tree from lab `tracks_corrected_clip*` + `tracks_corrected_dual_vial.csv` (shortcut: **`scripts/package_run231127_github_release.sh`** symlink).
 - `docs/06_large_tracking_assets.md` — GitHub/Zenodo note for blobs > 100 MB.
 
 GitHub forbids blobs > ~100 MB; uncompressed dual-vial CSV (~13 GB) and per-clip CSVs (**~170–350 MB**) are archived as `.xz`; see `data/run231127_github_release/README.md` for decompression and checksums.

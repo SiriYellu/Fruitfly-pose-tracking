@@ -23,7 +23,7 @@ python examples/load_and_infer.py
 
 ### Training
 
-`gpu-train` wraps `scripts/train_scaled_model.py`.
+`gpu-train` runs `scripts/train_scaled_model.py` (**symlink** to [`pipeline/stages/stage_03_training/train_scaled_model.py`](../pipeline/stages/stage_03_training/train_scaled_model.py)).
 
 - **Smoke defaults**: `EPOCHS=10`, `IMG_SIZE=640`, `BATCH=2` (fast sanity check).
 
