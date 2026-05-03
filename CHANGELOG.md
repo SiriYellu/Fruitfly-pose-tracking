@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.4.2] – 2026-05-03
+
+### README batch previews + five full demos
+
+- **`tracked_videos/batch_full/`** — five **~60 s** H.264 exports (`b1_*` … `b5_*`), **GIF** loops and **JPEG** posters for markdown preview.
+- **`README.md`** — inline GIF thumbnails that link into GitHub’s in-browser viewer for streaming (no `<video>` in README limitations).
+- **`docs/batch_videos_player.html`** — optional `<video>` page (local/Pages server) streaming from **`raw.githubusercontent.com`**.
+
 ## [2.4.1] – 2026-05-03
 
 ### Sample videos match Task3 multi-track colors

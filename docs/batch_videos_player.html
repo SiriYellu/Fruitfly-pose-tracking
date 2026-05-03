@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Five tracked batch demos (60 s)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 960px; margin: 0 auto; padding: 1rem 1.25rem 3rem; line-height: 1.45; color: #1a1a1a; background: #f6f7f9; }
+    h1 { font-size: 1.35rem; }
+    section { margin: 2rem 0; padding: 1rem 1.25rem 1.25rem; background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+    h2 { margin: 0 0 .6rem; font-size: 1.05rem; }
+    video { width: 100%; max-height: min(72vh, 820px); background: #000; border-radius: 4px; }
+    code { font-size: .85rem; word-break: break-all; background: #eef1f6; padding: .1em .35em; border-radius: 3px; }
+    p.note { font-size: .88rem; color: #444; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Five tracked batch demos (~60&nbsp;s, H.264)</h1>
+  <p>
+    Streams from branch <strong>main</strong> via
+    <code>raw.githubusercontent.com</code>.
+    Forks: edit <code>ORG_REPO</code> / <code>BRANCH</code> below, or use local copies of the MP4s under
+    <code>pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/</code>.
+  </p>
+
+  <div id="players"></div>
+
+  <script>
+    const ORG_REPO = 'SiriYellu/Fruitfly-pose-tracking';
+    const BRANCH = 'main';
+    const HOST = `https://raw.githubusercontent.com/${ORG_REPO}/${BRANCH}`;
+    const SUB = `${HOST}/pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full`;
+
+    const CLIPS = [
+      ['Batch 1 — FVI_20231127_151027_img0002', 'b1_tracked_60s_h264.mp4'],
+      ['Batch 2 — FVI_20231127_151027_img0003', 'b2_tracked_60s_h264.mp4'],
+      ['Batch 3 — FVI_20231127_151027_img0004', 'b3_tracked_60s_h264.mp4'],
+      ['Batch 4 — FVI_20231127_151027_img0005', 'b4_tracked_60s_h264.mp4'],
+      ['Batch 5 — FVI_20231127_151027_img0006', 'b5_tracked_60s_h264.mp4'],
+    ];
+
+    const root = document.getElementById('players');
+    for (const [title, file] of CLIPS) {
+      const src = `${SUB}/${encodeURIComponent(file)}`;
+      const sec = document.createElement('section');
+      const h = document.createElement('h2');
+      h.textContent = title;
+      const v = document.createElement('video');
+      v.setAttribute('controls', '');
+      v.setAttribute('preload', 'metadata');
+      v.setAttribute('playsinline', '');
+      const s = document.createElement('source');
+      s.src = src;
+      s.type = 'video/mp4';
+      v.appendChild(s);
+      sec.appendChild(h);
+      sec.appendChild(v);
+      root.appendChild(sec);
+    }
+  </script>
+
+  <p class="note">
+    Open from a tiny local HTTP server (e.g. <code>cd docs &amp;&amp; python -m http.server 8080</code>),
+    publish <code>/docs</code> with <a href="https://docs.github.com/en/pages">GitHub Pages</a>,
+    or use your editor preview. Opening as <code>file://</code> may prevent video playback in strict browsers.
+  </p>
+</body>
+</html>

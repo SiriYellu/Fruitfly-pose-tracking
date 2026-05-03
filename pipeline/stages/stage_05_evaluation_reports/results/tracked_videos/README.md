@@ -16,8 +16,7 @@ These clips show detections **after** inference with the YOLO pose model **plus 
 - Batch folder:  
   `Traingagain/Task3_FlyTracking/03_Results/batch_videos/`
 
-Full **~60 s** MPEG-4 exports remain on disk there if you need the uncut batch outputs.
-
+Full-length **README demos** (**~60 s × 5**, H.264, per-track colors) live in **`batch_full/`** with GIF/poster previews; originals also remain on disk under `Traingagain/.../batch_videos/` if needed.
 **Rebuild similar overlays:** colored MP4s like these are emitted by **`Traingagain/Task3_FlyTracking`** batch scripts (see **`batch_tracking_generator.py`** → `tracked_video_*.mp4`). Repo clips are FFmpeg **H.264** trims (`-ss 0 -t 8`, `libx264`) of those exports.
 
 Tracks to CSV **without drawing** on frames:

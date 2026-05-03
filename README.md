@@ -57,6 +57,48 @@ Qualitative demos with **detections / keypoints / track IDs overlaid**:
 | ~8 s, ~720p preview (H.264, small; same clip) | [`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4`](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4) |
 | Three more ~8 s vials (batch QA; same viz) | [`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_batch/`](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_batch/) |
 
+### Full Task3 batch (~60 s × 5, previews + in-browser playback)
+
+GitHub Markdown does **not** render HTML `<video>` tags in READMEs, so embedded “live” motion here uses short **GIF** loops (**~3 s**) from each clip. **Click any GIF or the link under it** to open the corresponding **full ~60 s H.264** file — GitHub’s file page streams it in your browser (**no clone** required).
+
+<details>
+<summary>Optional: HTML5 players (local served file)</summary>
+
+For five inline `<video>` players that pull MP4s from `raw.githubusercontent.com`, open **[`docs/batch_videos_player.html`](docs/batch_videos_player.html)** via a local HTTP server or GitHub Pages (see notes at bottom of that file).
+</details>
+
+[**Batch folder + provenance**](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/README.md)
+
+#### Batch 1 — `FVI_20231127_151027_img0002.mp4`
+
+[![Batch 1 preview GIF](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/preview_gifs/b1_preview.gif)](https://github.com/SiriYellu/Fruitfly-pose-tracking/blob/main/pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/b1_tracked_60s_h264.mp4)
+
+[▶ Full video ~60 s (stream on GitHub)](https://github.com/SiriYellu/Fruitfly-pose-tracking/blob/main/pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/b1_tracked_60s_h264.mp4)
+
+#### Batch 2 — `FVI_20231127_151027_img0003.mp4`
+
+[![Batch 2 preview GIF](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/preview_gifs/b2_preview.gif)](https://github.com/SiriYellu/Fruitfly-pose-tracking/blob/main/pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/b2_tracked_60s_h264.mp4)
+
+[▶ Full video ~60 s](https://github.com/SiriYellu/Fruitfly-pose-tracking/blob/main/pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/b2_tracked_60s_h264.mp4)
+
+#### Batch 3 — `FVI_20231127_151027_img0004.mp4`
+
+[![Batch 3 preview GIF](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/preview_gifs/b3_preview.gif)](https://github.com/SiriYellu/Fruitfly-pose-tracking/blob/main/pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/b3_tracked_60s_h264.mp4)
+
+[▶ Full video ~60 s](https://github.com/SiriYellu/Fruitfly-pose-tracking/blob/main/pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/b3_tracked_60s_h264.mp4)
+
+#### Batch 4 — `FVI_20231127_151027_img0005.mp4`
+
+[![Batch 4 preview GIF](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/preview_gifs/b4_preview.gif)](https://github.com/SiriYellu/Fruitfly-pose-tracking/blob/main/pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/b4_tracked_60s_h264.mp4)
+
+[▶ Full video ~60 s](https://github.com/SiriYellu/Fruitfly-pose-tracking/blob/main/pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/b4_tracked_60s_h264.mp4)
+
+#### Batch 5 — `FVI_20231127_151027_img0006.mp4`
+
+[![Batch 5 preview GIF](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/preview_gifs/b5_preview.gif)](https://github.com/SiriYellu/Fruitfly-pose-tracking/blob/main/pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/b5_tracked_60s_h264.mp4)
+
+[▶ Full video ~60 s](https://github.com/SiriYellu/Fruitfly-pose-tracking/blob/main/pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/batch_full/b5_tracked_60s_h264.mp4)
+
 See [`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/README.md`](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/README.md) for provenance.
 
 ---
