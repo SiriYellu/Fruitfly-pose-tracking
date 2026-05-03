@@ -1,10 +1,17 @@
 # Changelog
 
+## [2.4.1] – 2026-05-03
+
+### Sample videos match Task3 multi-track colors
+
+- Regenerated **`sample_pose_bytetrack_8s.mp4`**, **`sample_pose_bytetrack_preview_720p.mp4`**, and **`tracked_videos/sample_batch/*.mp4`** as short **H.264** trims from **`Traingagain/Task3_FlyTracking/03_Results/batch_videos/tracked_video_*.mp4`**, preserving **2448×2048** full-res visuals and **`track_id`-indexed** bbox/label colors (vs. older annotation exports that drew all-green boxes).
+- Updated **`tracked_videos/README.md`**, **`sample_batch/README.md`**, and root **`README.md`** provenance/size notes.
+
 ## [2.4.0] – 2026-05-02
 
 ### Extra batch demo videos
 
-- **`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_batch/`** — three additional **~8 s** full-res clips (**~32 MB** each), same lineage as `annotated_video_01`; documented in `sample_batch/README.md` and linked from root **`README.md`**.
+- **`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_batch/`** — three extra **~8 s** QA clips alongside the primary demo; **v2.4.1** re-sourced them from Task3 **colored** batch exports—see **`tracked_videos/README.md`**.
 
 ### Repo layout matches pipeline stages
 

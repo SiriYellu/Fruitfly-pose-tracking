@@ -1,22 +1,28 @@
 ## Tracked / pose-visualization samples (after running the model)
 
-These clips show detections **after** inference with the YOLO pose model (bounding boxes / keypoints / IDs as produced in your labeling pipeline—not raw camera-only footage).
+These clips show detections **after** inference with the YOLO pose model **plus ByteTrack**. Bounding boxes and `T{id}` labels use a **per-track color cycle** (see `batch_tracking_generator.py` in `Traingagain/Task3_FlyTracking`), not uniform green—which matches what you see in full batch exports.
 
 | File | Description |
 |------|--------------|
-| `sample_pose_bytetrack_8s.mp4` | Full-resolution sample (~8 s, ~32 MB): vials with overlays from your trained pose + tracking stack. |
-| `sample_pose_bytetrack_preview_720p.mp4` | Lightweight H.264 preview (~720 px height, no audio) for quick viewing or embedding in decks. |
+| `sample_pose_bytetrack_8s.mp4` | Full-resolution **H.264** sample (~8 s, **2448×2048**, ~2–3 MB in repo): trimmed from Task3 **`tracked_video_1.mp4`**. |
+| `sample_pose_bytetrack_preview_720p.mp4` | First ~8 s scaled to ~720 px height, H.264, no audio, for decks / compose defaults. |
 
-**Extra vials for batch QA:** [`sample_batch/`](sample_batch/) holds three more **~8 s** clips (~32 MB each), same lineage as clip 01—see [`sample_batch/README.md`](sample_batch/README.md).
+**Extra vials for batch QA:** [`sample_batch/`](sample_batch/) — three more **~8 s** trims from **`tracked_video_2` … `tracked_video_4`**; same visualization code path.
 
-**Source on lab disk:** primary clip copied from  
-`Traingagain/05_Annotations/annotated_videos_30sec/annotated_video_01.mp4`.
+**Lab sources (canonical):**
 
-Regenerate variants from any new `.mp4` with:
+- Primary trim:  
+  `Traingagain/Task3_FlyTracking/03_Results/batch_videos/batch_output_20250929_221529/tracked_video_1.mp4`
+- Batch folder:  
+  `Traingagain/Task3_FlyTracking/03_Results/batch_videos/`
+
+Full **~60 s** MPEG-4 exports remain on disk there if you need the uncut batch outputs.
+
+**Rebuild similar overlays:** colored MP4s like these are emitted by **`Traingagain/Task3_FlyTracking`** batch scripts (see **`batch_tracking_generator.py`** → `tracked_video_*.mp4`). Repo clips are FFmpeg **H.264** trims (`-ss 0 -t 8`, `libx264`) of those exports.
+
+Tracks to CSV **without drawing** on frames:
 
 ```bash
 python scripts/track_video.py --video your_clip.mp4 --output out_dir/
 ```
-(Same code: `pipeline/stages/stage_04_inference_tracking/track_video.py`.)
-
-For an annotated video export, use Ultralytics’ built-ins, e.g. `YOLO(...).predict(source=..., save=True)` or enable save in tracking per [Ultralytics tracking docs](https://docs.ultralytics.com/modes/track/).
+(Same code: `pipeline/stages/stage_04_inference_tracking/track_video.py`; use Ultralytics **`save=True`** tracking if you want built-in plotted video from weights in-repo.)

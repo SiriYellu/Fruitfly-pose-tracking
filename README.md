@@ -53,9 +53,9 @@ Qualitative demos with **detections / keypoints / track IDs overlaid**:
 
 | Clip | Location |
 |------|-----------|
-| ~8 s, full-res (~32 MB) | [`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_8s.mp4`](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_8s.mp4) |
-| ~8 s, 720p preview (~1 MB) | [`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4`](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4) |
-| Three more ~8 s vials (~32 MB each; batch QA) | [`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_batch/`](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_batch/) |
+| ~8 s, full-res (**2448×2048**, H.264 ~2 MB; **per-track colors**) | [`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_8s.mp4`](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_8s.mp4) |
+| ~8 s, ~720p preview (H.264, small; same clip) | [`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4`](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_pose_bytetrack_preview_720p.mp4) |
+| Three more ~8 s vials (batch QA; same viz) | [`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_batch/`](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/sample_batch/) |
 
 See [`pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/README.md`](pipeline/stages/stage_05_evaluation_reports/results/tracked_videos/README.md) for provenance.
 
